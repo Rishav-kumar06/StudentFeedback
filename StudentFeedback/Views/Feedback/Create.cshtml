@@ -1,0 +1,47 @@
+﻿@model StudentFeedback.Models.Feedback
+
+@{
+    ViewBag.Title = "Create Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Feedback</h2>
+
+@Html.Partial("_FeedbackInfo")
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(x => x.Name)
+        <br />
+        @Html.TextBoxFor(x => x.Name)
+        <br />
+        @Html.ValidationMessageFor(x => x.Name)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.EnrollmentNo)
+        <br />
+        @Html.TextBoxFor(x => x.EnrollmentNo)
+        <br />
+        @Html.ValidationMessageFor(x => x.EnrollmentNo)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Subject)
+        <br />
+        @Html.TextBoxFor(x => x.Subject)
+        <br />
+        @Html.ValidationMessageFor(x => x.Subject)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Comment)
+        <br />
+        @Html.TextAreaFor(x => x.Comment)
+        <br />
+        @Html.ValidationMessageFor(x => x.Comment)
+    </p>
+
+    <input type="submit" value="Submit" />
+}
